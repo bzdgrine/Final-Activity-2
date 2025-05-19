@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="task.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+  background: #f8f9fa;
+}
+.sidebar {
+  min-height: 100vh;
+  background: #fff;
+  border-right: 1px solid #e9ecef;
+}
+.sidebar .nav-link.active {
+  background: #f0f4ff;
+  color: #4f46e5;
+  font-weight: 500;
+}
+.sidebar .nav-link {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    .sidebar .nav-link i {
+      margin-right: 10px;
+    }
+    .topbar-profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    @media (max-width: 991.98px) {
+      .sidebar { min-height: auto; }
+      .sidebar .nav-link { font-size: 1rem; }
+    }
+    @media (max-width: 767.98px) {
+      .sidebar { display: grid; }
+      main { width: 100vw !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav class="col-lg-2 col-md-3 sidebar py-4" id="sidebar">
+        <div class="text-center mb-4">
+          <i class="fa fa-globe fa-2x text-primary mb-2"></i>
+          <div class="fw-bold text-primary mt-2" style="font-size:1.2rem;">WebBuilder</div>
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa fa-table-cells-large"></i>Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link active" href="task.html"><i class="fa fa-square-check"></i>Task</a></li>
+          <li class="nav-item"><a class="nav-link" href="calendar.html"><i class="fa fa-calendar"></i>Calendar</a></li>
+        </ul>
+      </nav>
+      <!-- Main Content -->
+      <main class="col-lg-10 col-md-9 px-4 py-4">
+        <!-- Top Bar -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div></div>
+          <div class="d-flex align-items-center gap-4">
+            <span class="text-muted">Monday, May 19, 2025</span>
+            <i class="fa fa-bell fa-lg text-muted position-relative" style="margin-right: 10px;"></i>
+            <div class="topbar-profile">
+              <img src="https://randomuser.me/api/portraits/women/32.jpg" class="avatar" alt="Profile">
+              <div>
+                <div class="fw-semibold">Emily Johnson</div>
+                <div class="small text-muted">Product Manager</div>
+              </div>
+              <i class="fa fa-angle-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
+          <h2 class="mb-3 mb-md-0">Task Management</h2>
+          <button class="btn btn-primary">Add Task</button>
+        </div>
+        <div class="card shadow-sm">
+          <div class="card-body table-responsive">
+            <table class="table table-hover mb-0 task-table align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th>Task</th>
+                  <th>Assigned To</th>
+                  <th>Due Date</th>
+                  <th>Status</th>
+                  <th>Priority</th>
+                  <th>Tags</th>
+                  <th>Comments</th>
+                  <th>Progress</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="fw-semibold">Finalize Q2 marketing strategy</div>
+                    <div class="small text-muted">Marketing team collaboration</div>
+                  </td>
+                  <td><img src="https://randomuser.me/api/portraits/men/32.jpg" class="avatar" alt="">Emily Johnson</td>
+                  <td>May 21</td>
+                  <td><span class="badge bg-warning text-dark">In Progress</span></td>
+                  <td><span class="badge bg-danger">High</span></td>
+                  <td><span class="badge bg-primary">Marketing</span> <span class="badge bg-info text-dark">Q2</span></td>
+                  <td>3</td>
+                  <td>
+                    <div class="progress" style="height: 5px;">
+                      <div class="progress-bar bg-primary" style="width: 75%"></div>
+                    </div>
+                  </td>
+                  <td><button class="btn btn-sm btn-outline-primary">Details</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="fw-semibold">Review product feedback from users</div>
+                    <div class="small text-muted">Analyze customer survey results</div>
+                  </td>
+                  <td><img src="https://randomuser.me/api/portraits/men/33.jpg" class="avatar" alt="">Michael Chen</td>
+                  <td>May 23</td>
+                  <td><span class="badge bg-info text-dark">Pending</span></td>
+                  <td><span class="badge bg-warning text-dark">Medium</span></td>
+                  <td><span class="badge bg-success">Feedback</span></td>
+                  <td>1</td>
+                  <td>
+                    <div class="progress" style="height: 5px;">
+                      <div class="progress-bar bg-warning" style="width: 30%"></div>
+                    </div>
+                  </td>
+                  <td><button class="btn btn-sm btn-outline-primary">Details</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="fw-semibold">Prepare monthly report</div>
+                    <div class="small text-muted">Compile and review data</div>
+                  </td>
+                  <td><img src="https://randomuser.me/api/portraits/women/44.jpg" class="avatar" alt="">Sarah Wilson</td>
+                  <td>May 25</td>
+                  <td><span class="badge bg-success">Completed</span></td>
+                  <td><span class="badge bg-primary">Low</span></td>
+                  <td><span class="badge bg-secondary">Report</span></td>
+                  <td>0</td>
+                  <td>
+                    <div class="progress" style="height: 5px;">
+                      <div class="progress-bar bg-success" style="width: 100%"></div>
+                    </div>
+                  </td>
+                  <td><button class="btn btn-sm btn-outline-primary">Details</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

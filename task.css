@@ -1,0 +1,42 @@
+body {
+    background: #f8f9fa;
+  }
+  .sidebar {
+    min-height: 100vh;
+    background: #fff;
+    border-right: 1px solid #e9ecef;
+  }
+  .sidebar .nav-link.active {
+    background: #f0f4ff;
+    color: #4f46e5;
+    font-weight: 500;
+  }
+  .sidebar .nav-link {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+.avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
+      }
+.sidebar .nav-link i {
+        margin-right: 10px;
+      }
+      
+.topbar-profile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+@media (max-width: 991.98px) {
+        .sidebar { min-height: auto; }
+        .sidebar .nav-link { font-size: 1rem; }
+      }
+@media (max-width: 767.98px) {
+        .sidebar { display: grid; }
+        main { width: 100vw !important; }
+      }
